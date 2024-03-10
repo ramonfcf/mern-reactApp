@@ -1,7 +1,17 @@
-export default function Button() {
+import PropTypes from 'prop-types';
+
+
+const Button = ({ onClick }) => {
   return (
-    <button type="button" className="btn btn-primary">
-      Left
-    </button>
+    <button type="submit" className="btn btn-primary" onClick={onClick}>
+    Submit
+  </button>
   );
 }
+
+export default Button;
+
+Button.propTypes = {
+  onClick: PropTypes.func.isRequired
+};
+
