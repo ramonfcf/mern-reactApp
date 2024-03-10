@@ -1,12 +1,14 @@
-import useGetAllUsers from "../hooks/useGetAllUsers";
-import formatBirthdate from "../hooks/useFormatBirthdate";
+import useGetAllUsers from "../../hooks/useGetAllUsers";
+import formatBirthdate from "../../hooks/useFormatBirthdate";
 
 export default function Home() {
   const { response, error, loading } = useGetAllUsers();
 
+  console.log("CARREGOus");
+
   return (
-    <div>
-      <h1>Home</h1>
+    <div className="container">
+      <h3>Home</h3>
       {error && (
         <div className="alert alert-danger" role="alert">
           Error: {error.message}
@@ -20,7 +22,7 @@ export default function Home() {
         </div>
       )}
       {response && (
-        <div className="mt-5">
+        <div className="mt-3">
           <ul className="list-group">
             {response.map((user, index) => (
               <li
