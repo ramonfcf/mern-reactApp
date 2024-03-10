@@ -1,45 +1,27 @@
 import useGetAllUsers from "../../hooks/useGetAllUsers";
-import formatBirthdate from "../../hooks/useFormatBirthdate";
+import UserCard from "../userCard";
+import Loading from "../loading";
 
 export default function Home() {
   const { response, error, loading } = useGetAllUsers();
 
-  console.log("CARREGOus");
-
   return (
     <div className="container">
-      <h3>Home</h3>
+      <h3 className="pt-3">You can see all users here</h3>
       {error && (
         <div className="alert alert-danger" role="alert">
           Error: {error.message}
         </div>
       )}{" "}
-      {loading && (
-        <div className="d-flex justify-content-center">
-          <div className="spinner-border text-primary" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </div>
-        </div>
-      )}
+      {loading && <Loading />}
       {response && (
-        <div className="mt-3">
-          <ul className="list-group">
-            {response.map((user, index) => (
-              <li
-                key={index}
-                className="list-group-item d-flex justify-content-between align-items-center"
-              >
-                <div className="ms-2 me-auto">
-                  <div className="fw-bold">Name: {user.name}</div>
-                  email: {user.email}
-                </div>
-                <span className="badge bg-primary rounded-pill">
-                  Birthdate: {formatBirthdate(user.birthdate)}
-                </span>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <ul className="list-group">
+          {response.map((user, index) => (
+            <li key={index} className="list-group-item">
+              <UserCard user={user} />
+            </li>
+          ))}
+        </ul>
       )}
     </div>
   );

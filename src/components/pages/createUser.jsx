@@ -38,7 +38,7 @@ const CreateUser = () => {
 
   return (
     <div className="container py-5">
-      <h1>Create User</h1>
+      <h1>You can create a user here</h1>
       <form onSubmit={submitForm}>
         <Input
           type="text"
@@ -63,7 +63,7 @@ const CreateUser = () => {
         />
         {error && <ErrorMessage error={error.message} />}
         {returnedUser && <SuccessMessage message={"User created"} />}
-        <Button onClick={submitForm} />
+        <Button onClick={submitForm} text="Create User" />
       </form>
     </div>
   );
