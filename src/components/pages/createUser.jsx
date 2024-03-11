@@ -4,6 +4,7 @@ import ErrorMessage from "../errorMessage";
 import SuccessMessage from "../successMessage";
 import axios from "axios";
 import Input from "../input";
+import UserCard from "../userCard";
 
 const CreateUser = () => {
   const [name, setName] = useState("");
@@ -22,10 +23,13 @@ const CreateUser = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/v1/users",
+        import.meta.env.VITE_API_URL + "/api/v1/users",
         user
       );
       setReturnedUser(response.data);
+      setName("");
+      setEmail("");
+      setBirthdate("");
     } catch (error) {
       const {
         response: {
@@ -33,6 +37,7 @@ const CreateUser = () => {
         },
       } = error;
       setError({ message });
+      setReturnedUser(null);
     }
   };
 
@@ -63,6 +68,7 @@ const CreateUser = () => {
         />
         {error && <ErrorMessage error={error.message} />}
         {returnedUser && <SuccessMessage message={"User created"} />}
+        {returnedUser && <UserCard user={returnedUser} />}
         <Button onClick={submitForm} text="Create User" />
       </form>
     </div>
