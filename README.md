@@ -1,8 +1,38 @@
-# React + Vite
+# mern-ReactApp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a aplication to manage a list of users. The app is built with React and Vite.
+The app is connected to a backend server coded in Node.js and Express.
 
-Currently, two official plugins are available:
+## Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Before running these commands, ensure you have `yarn` installed on your system. If not, you can install it by running `npm install --global yarn` (if you have NPM installed) or you can download Yarn from the official website.
+
+1. **Install the dependencies**:
+```bash
+yarn install
+```
+
+2. **Run the app**:
+```bash
+yarn dev
+```
+
+3. **Run unit tests**:
+```bash
+yarn test
+```
+
+## Usage
+
+The app will be running on `http://localhost:5173`. You can access it by opening your browser and typing this URL.
+
+## Dependencies
+
+- [React](https://reactjs.org/)
+- [Node.js](https://nodejs.org/)
+- [Vite](https://vitejs.dev/)
+- [Axios](https://axios-http.com/)
+- [Jest](https://jestjs.io/)
+- [Bootstrap](https://getbootstrap.com/)
+- [React Router](https://www.npmjs.com/package/react-router-dom)
+- [Testing Library](https://testing-library.com/)

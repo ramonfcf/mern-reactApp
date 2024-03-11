@@ -1,10 +1,10 @@
 import { useState } from "react";
-import Button from "../button";
-import ErrorMessage from "../errorMessage";
-import SuccessMessage from "../successMessage";
+import Button from "../Button";
+import ErrorMessage from "../ErrorMessage";
+import SuccessMessage from "../SuccessMessage";
 import axios from "axios";
-import Input from "../input";
-import UserCard from "../userCard";
+import Input from "../Input";
+import UserCard from "../UserCard";
 
 const CreateUser = () => {
   const [name, setName] = useState("");

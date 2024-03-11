@@ -1,8 +1,8 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import SingleColumn from "./components/singleColumn";
-import NavBar from "./components/navBar";
-import Home from "./components/pages/home";
-import CreateUser from "./components/pages/createUser";
+import SingleColumn from "./components/SingleColumn";
+import NavBar from "./components/NavBar";
+import Home from "./components/pages/Home";
+import CreateUser from "./components/pages/CreateUser";
 
 import "./App.css";
 

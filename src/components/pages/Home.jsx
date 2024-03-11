@@ -1,8 +1,8 @@
 import { useState } from "react";
 import useGetAllUsers from "../../hooks/useGetAllUsers";
-import UserCard from "../userCard";
-import Loading from "../loading";
-import SearchBar from "../searchBar";
+import UserCard from "../UserCard";
+import Loading from "../Loading";
+import SearchBar from "../SearchBar";
 
 export default function Home() {
   const { response, error, loading } = useGetAllUsers();

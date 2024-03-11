@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
 import formatBirthdate from "../hooks/useFormatBirthdate";
 import axios from "axios";
-import ErrorMessage from "./errorMessage";
+import ErrorMessage from "./ErrorMessage";
+import EditUserModal from "./EditUserModal";
 
 const UserCard = ({ user }) => {
   const handleDelete = async () => {
@@ -49,6 +50,9 @@ const UserCard = ({ user }) => {
           >
             Delete
           </button>
+          <span>
+            <EditUserModal />
+          </span>
         </div>
       </div>
     </div>
