@@ -22,7 +22,7 @@ const useGetAllUsers = (token) => {
         setError(error);
         setLoading(false);
       });
-  }, []);
+  });
 
   return { response, error, loading };
 };

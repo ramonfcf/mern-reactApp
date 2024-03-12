@@ -1,9 +1,10 @@
-import { Routes, Route, BrowserRouter } from "react-router-dom";
-import SingleColumn from "./components/SingleColumn";
-import NavBar from "./components/NavBar";
-import AllUsers from "./components/pages/AllUsers";
-import Home from "./components/pages/Home";
-import CreateUser from "./components/pages/CreateUser";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import NavBar from "./components/organisms/NavBar/NavBar";
+import Home from "./components/pages/Home/Home";
+import AllUsers from "./components/pages/AllUsers/AllUsers";
+import SingleColumn from "./components/templates/SingleColumn";
+import CreateUser from "./components/pages/CreateUser/CreateUser";
 import { authenticate } from "./hooks/useAuthentication";
 
 await authenticate();

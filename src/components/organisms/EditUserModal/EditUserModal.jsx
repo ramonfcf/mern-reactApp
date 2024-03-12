@@ -1,6 +1,9 @@
 import { useState } from "react";
+
 import propTypes from "prop-types";
-import UpdateUserForm from "./UserForm";
+
+import Button from "../../atoms/Button/Button";
+import UpdateUserForm from "../UserForm/UserForm";
 
 const EditUserModal = ({ user }) => {
   const [open, setOpen] = useState(false);
@@ -17,13 +20,7 @@ const EditUserModal = ({ user }) => {
 
   return (
     <span>
-      <button
-        type="button"
-        className="btn btn-secondary ms-2 btn-sm p-1"
-        onClick={() => setOpen(!open)}
-      >
-        Edit
-      </button>
+      <Button text="Edit" size="small" onClick={() => setOpen(!open)} />
       {open && (
         <>
           <div style={backdropStyle}></div>
@@ -36,11 +33,12 @@ const EditUserModal = ({ user }) => {
               <div className="modal-content">
                 <div className="modal-header">
                   <h5 className="modal-title">Edit User</h5>
-                  <button
-                    type="button"
-                    className="btn-close"
+
+                  <Button
+                    type="close"
+                    color="none"
                     onClick={() => (setOpen(!open), window.location.reload())}
-                  ></button>
+                  />
                 </div>
                 <div className="modal-body">
                   <UpdateUserForm
@@ -50,13 +48,11 @@ const EditUserModal = ({ user }) => {
                   />
                 </div>
                 <div className="modal-footer">
-                  <button
-                    type="button"
-                    className="btn btn-secondary me-2"
+                  <Button
+                    text="Close"
+                    color="dark"
                     onClick={() => (setOpen(!open), window.location.reload())}
-                  >
-                    Close
-                  </button>
+                  />
                 </div>
               </div>
             </div>

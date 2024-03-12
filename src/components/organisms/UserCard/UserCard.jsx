@@ -1,9 +1,11 @@
-import PropTypes from "prop-types";
-import formatBirthdate from "../hooks/useFormatBirthdate";
 import axios from "axios";
-import ErrorMessage from "./ErrorMessage";
-import EditUserModal from "./EditUserModal";
-import { getToken } from "../hooks/useAuthentication";
+import PropTypes from "prop-types";
+
+import Button from "../../atoms/Button/Button";
+import ErrorMessage from "../../atoms/ErrorMessage/ErrorMessage";
+import EditUserModal from "../EditUserModal/EditUserModal";
+import { getToken } from "../../../hooks/useAuthentication";
+import formatBirthdate from "../../../hooks/useFormatBirthdate";
 
 const UserCard = ({ user }) => {
   const handleDelete = async () => {
@@ -43,12 +45,12 @@ const UserCard = ({ user }) => {
             Birthdate: {formatBirthdate(user.birthdate)}
           </span>
           <span className="px-2">|</span>
-          <button
-            className="btn btn-danger ms-2 btn-sm p-1"
+          <Button
+            text="Delete"
+            color="danger"
+            size="small"
             onClick={handleDelete}
-          >
-            Delete
-          </button>
+          />
           <span>
             <EditUserModal user={user} />
           </span>

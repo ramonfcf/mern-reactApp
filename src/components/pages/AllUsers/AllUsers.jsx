@@ -1,9 +1,10 @@
 import { useState } from "react";
-import useGetAllUsers from "../../hooks/useGetAllUsers";
-import UserCard from "../UserCard";
-import Loading from "../Loading";
-import SearchBar from "../SearchBar";
-import { getToken } from "../../hooks/useAuthentication";
+
+import Loading from "../../atoms/Loading/Loading";
+import UserCard from "../../organisms/UserCard/UserCard";
+import SearchBar from "../../molecules/SearchBar/SearchBar";
+import useGetAllUsers from "../../../hooks/useGetAllUsers";
+import { getToken } from "../../../hooks/useAuthentication";
 
 const AllUsers = () => {
   const { response, error, loading } = useGetAllUsers(getToken());

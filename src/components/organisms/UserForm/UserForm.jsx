@@ -1,12 +1,14 @@
 import { useState } from "react";
+
 import axios from "axios";
-import Button from "../components/Button";
-import ErrorMessage from "../components/ErrorMessage";
-import SuccessMessage from "../components/SuccessMessage";
-import Input from "../components/Input";
-import UserCard from "../components/UserCard";
 import propTypes from "prop-types";
-import { getToken } from "../hooks/useAuthentication";
+
+import Input from "../../atoms/Input/Input";
+import Button from "../../atoms/Button/Button";
+import UserCard from "../UserCard/UserCard";
+import ErrorMessage from "../../atoms/ErrorMessage/ErrorMessage";
+import { getToken } from "../../../hooks/useAuthentication";
+import SuccessMessage from "../../atoms/SuccessMessage/SuccessMessage";
 
 const UserForm = ({ user, title, method = "POST" }) => {
   const [name, setName] = useState(user ? user.name : "");
