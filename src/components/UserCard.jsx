@@ -55,10 +55,10 @@ export default UserCard;
 
 UserCard.propTypes = {
   user: PropTypes.shape({
-    _id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    email: PropTypes.string.isRequired,
-    birthdate: PropTypes.string.isRequired,
+    _id: PropTypes.string,
+    name: PropTypes.string,
+    email: PropTypes.string,
+    birthdate: PropTypes.string,
   }).isRequired,
   onEdit: PropTypes.func,
 };

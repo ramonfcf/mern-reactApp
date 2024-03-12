@@ -39,7 +39,7 @@ const EditUserModal = ({ user }) => {
                   <button
                     type="button"
                     className="btn-close"
-                    onClick={() => setOpen(!open)}
+                    onClick={() => (setOpen(!open), window.location.reload())}
                   ></button>
                 </div>
                 <div className="modal-body">
@@ -53,7 +53,7 @@ const EditUserModal = ({ user }) => {
                   <button
                     type="button"
                     className="btn btn-secondary me-2"
-                    onClick={() => setOpen(!open)}
+                    onClick={() => (setOpen(!open), window.location.reload())}
                   >
                     Close
                   </button>

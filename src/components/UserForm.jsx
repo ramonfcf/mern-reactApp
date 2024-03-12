@@ -21,23 +21,24 @@ const UserForm = ({ user, title, method = "POST" }) => {
 
   const submitForm = async (event) => {
     event.preventDefault();
-    const newUser = {
-      name,
-      email,
-      birthdate,
-    };
 
     try {
       const response = await axios({
         method,
         url: url,
-        data: newUser,
+        data: {
+          name,
+          email,
+          birthdate,
+        },
       });
 
       setReturnedUser(response.data);
       setName("");
       setEmail("");
       setBirthdate("");
+
+      if (method === "PATCH") refreshPage();
     } catch (error) {
       const {
         response: {
@@ -47,6 +48,12 @@ const UserForm = ({ user, title, method = "POST" }) => {
       setError({ message });
       setReturnedUser(null);
     }
+  };
+
+  const refreshPage = () => {
+    setTimeout(() => {
+      window.location.reload();
+    }, 2000);
   };
 
   return (
