@@ -10,12 +10,14 @@ const api = axios.create({
 });
 
 const authenticate = async () => {
+  if (localStorage.getItem("expiresIn") < Date.now()) deleteToken();
   if (localStorage.getItem("token")) return;
 
   try {
     const response = await api.post("/auth/authenticate", {});
 
     localStorage.setItem("token", response.data.token);
+    localStorage.setItem("expiresIn", Date.now() + 3600000);
   } catch (error) {
     console.error("Error authenticating", error);
   }
@@ -23,6 +25,11 @@ const authenticate = async () => {
 
 const getToken = () => {
   return `Bearer ${localStorage.getItem("token")}`;
+};
+
+const deleteToken = () => {
+  localStorage.removeItem("token");
+  localStorage.removeItem("expiresIn");
 };
 
 export { authenticate, getToken };
