@@ -8,14 +8,13 @@ const NavBar = () => {
           Home
         </Link>
         <div className="navbar-brand">
+          <span className="navbar-brand">|</span>
+          <Link to="/all-users" className="navbar-brand">
+            All Users
+          </Link>
+          <span className="navbar-brand">|</span>
           <Link to="/create" className="navbar-brand">
-            Create
-          </Link>
-          <Link to="/edit" className="navbar-brand">
-            Edit
-          </Link>
-          <Link to="/delete" className="navbar-brand">
-            Delete
+            Create User
           </Link>
         </div>
       </div>
