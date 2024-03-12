@@ -23,8 +23,6 @@ const UserCard = ({ user }) => {
     }
   };
 
-  // const handleEdit = () => {};
-
   return (
     <div className="card my-3">
       <div className="card-body d-flex">
@@ -38,12 +36,6 @@ const UserCard = ({ user }) => {
           <span className="badge bg-dark rounded-pill py-2 font-weight-bold">
             Birthdate: {formatBirthdate(user.birthdate)}
           </span>
-          {/* <button
-            className="btn btn-primary ms-2 btn-sm p-1"
-            onClick={handleEdit}
-          >
-            Edit
-          </button> */}
           <button
             className="btn btn-danger ms-2 btn-sm p-1"
             onClick={handleDelete}
@@ -51,7 +43,7 @@ const UserCard = ({ user }) => {
             Delete
           </button>
           <span>
-            <EditUserModal />
+            <EditUserModal user={user} />
           </span>
         </div>
       </div>

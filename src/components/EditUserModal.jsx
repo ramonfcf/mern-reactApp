@@ -1,6 +1,8 @@
 import { useState } from "react";
+import propTypes from "prop-types";
+import UpdateUserForm from "./UserForm";
 
-const EditUserModal = () => {
+const EditUserModal = ({ user }) => {
   const [open, setOpen] = useState(false);
 
   const backdropStyle = {
@@ -30,7 +32,7 @@ const EditUserModal = () => {
             tabIndex="-1"
             style={{ display: "block", zIndex: 1050 }}
           >
-            <div className="modal-dialog modal-dialog-centered">
+            <div className="modal-dialog modal-dialog-centered modal-lg">
               <div className="modal-content">
                 <div className="modal-header">
                   <h5 className="modal-title">Edit User</h5>
@@ -41,18 +43,19 @@ const EditUserModal = () => {
                   ></button>
                 </div>
                 <div className="modal-body">
-                  <p>Modal body text goes here.</p>
+                  <UpdateUserForm
+                    user={user}
+                    buttonMessage={"Confirm"}
+                    method="PATCH"
+                  />
                 </div>
                 <div className="modal-footer">
                   <button
                     type="button"
-                    className="btn btn-secondary"
+                    className="btn btn-secondary me-2"
                     onClick={() => setOpen(!open)}
                   >
                     Close
-                  </button>
-                  <button type="button" className="btn btn-primary">
-                    Save changes
                   </button>
                 </div>
               </div>
@@ -65,3 +68,7 @@ const EditUserModal = () => {
 };
 
 export default EditUserModal;
+
+EditUserModal.propTypes = {
+  user: propTypes.object.isRequired,
+};
