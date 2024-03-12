@@ -3,9 +3,10 @@ import useGetAllUsers from "../../hooks/useGetAllUsers";
 import UserCard from "../UserCard";
 import Loading from "../Loading";
 import SearchBar from "../SearchBar";
+import { getToken } from "../../hooks/useAuthentication";
 
 const AllUsers = () => {
-  const { response, error, loading } = useGetAllUsers();
+  const { response, error, loading } = useGetAllUsers(getToken());
   const [searchedUser, setSearchedUser] = useState("");
 
   const searchedUserLowCase = searchedUser.toLowerCase();

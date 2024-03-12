@@ -3,6 +3,7 @@ import formatBirthdate from "../hooks/useFormatBirthdate";
 import axios from "axios";
 import ErrorMessage from "./ErrorMessage";
 import EditUserModal from "./EditUserModal";
+import { getToken } from "../hooks/useAuthentication";
 
 const UserCard = ({ user }) => {
   const handleDelete = async () => {
@@ -13,7 +14,12 @@ const UserCard = ({ user }) => {
 
     try {
       await axios.delete(
-        `${import.meta.env.VITE_API_URL}/api/v1/users/${user._id}`
+        `${import.meta.env.VITE_API_URL}/api/v1/users/${user._id}`,
+        {
+          headers: {
+            Authorization: getToken(),
+          },
+        }
       );
 
       window.location.reload();
@@ -32,10 +38,11 @@ const UserCard = ({ user }) => {
           </h6>
           <h6 className="card-subtitle">Email: {user.email}</h6>
         </div>
-        <div>
+        <div className="d-flex align-items-center">
           <span className="badge bg-dark rounded-pill py-2 font-weight-bold">
             Birthdate: {formatBirthdate(user.birthdate)}
           </span>
+          <span className="px-2">|</span>
           <button
             className="btn btn-danger ms-2 btn-sm p-1"
             onClick={handleDelete}

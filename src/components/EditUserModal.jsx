@@ -19,7 +19,7 @@ const EditUserModal = ({ user }) => {
     <span>
       <button
         type="button"
-        className="btn btn-primary ms-2 btn-sm p-1"
+        className="btn btn-secondary ms-2 btn-sm p-1"
         onClick={() => setOpen(!open)}
       >
         Edit

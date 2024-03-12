@@ -4,8 +4,9 @@ import NavBar from "./components/NavBar";
 import AllUsers from "./components/pages/AllUsers";
 import Home from "./components/pages/Home";
 import CreateUser from "./components/pages/CreateUser";
+import { authenticate } from "./hooks/useAuthentication";
 
-import "./App.css";
+await authenticate();
 
 function App() {
   return (

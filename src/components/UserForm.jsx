@@ -6,6 +6,7 @@ import SuccessMessage from "../components/SuccessMessage";
 import Input from "../components/Input";
 import UserCard from "../components/UserCard";
 import propTypes from "prop-types";
+import { getToken } from "../hooks/useAuthentication";
 
 const UserForm = ({ user, title, method = "POST" }) => {
   const [name, setName] = useState(user ? user.name : "");
@@ -26,6 +27,9 @@ const UserForm = ({ user, title, method = "POST" }) => {
       const response = await axios({
         method,
         url: url,
+        headers: {
+          Authorization: getToken(),
+        },
         data: {
           name,
           email,
