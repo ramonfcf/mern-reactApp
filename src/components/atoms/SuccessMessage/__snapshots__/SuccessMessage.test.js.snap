@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SuccessMessage component matches snapshot 1`] = `
+<div>
+  <div
+    class="alert alert-success"
+    role="alert"
+  >
+    Success: 
+    Test message
+  </div>
+</div>
+`;

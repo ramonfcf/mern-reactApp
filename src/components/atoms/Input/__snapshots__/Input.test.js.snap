@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component matches snapshot 1`] = `
+<div>
+  <div
+    class="form-group py-2"
+  >
+    <label
+      for="Test label"
+    >
+      Test label
+    </label>
+    <input
+      class="form-control"
+      id="Test label"
+      placeholder="Test placeholder"
+      type="text"
+      value="Test value"
+    />
+  </div>
+</div>
+`;
