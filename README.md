@@ -18,13 +18,29 @@ yarn dev
 ```
 
 3. **Run unit tests**:
+
+To run the unit tests, you can run the following command:
 ```bash
 yarn test
+```
+To run the tests and update the snapshots, you can run the following command:
+```bash
+yarn test -u
 ```
 
 ## Usage
 
 The app will be running on `http://localhost:5173`. You can access it by opening your browser and typing this URL.
+
+## Environment Variables
+
+The app uses environment variables to configure the API URL and the API key. You can create a `.env` file in the root of the project and add the following variables:
+
+```env
+  [VITE_API_URL] - The URL of the backend server
+  [VITE_API_KEY] - The API key to access the backend server
+  [VITE_APP_NAME] - Passphrase to encrypt the JWT token
+```
 
 ## Dependencies
 
