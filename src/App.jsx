@@ -7,7 +7,11 @@ import SingleColumn from "./components/templates/SingleColumn";
 import CreateUser from "./components/pages/CreateUser/CreateUser";
 import { authenticate } from "./hooks/useAuthentication";
 
-await authenticate();
+const auth = async () => {
+  await authenticate();
+};
+
+auth();
 
 function App() {
   return (
