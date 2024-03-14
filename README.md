@@ -48,6 +48,11 @@ This project is divided into two parts: the server and the client. The server is
 
 You can acess the frontend app by clicking [here](https://mern-reactapp.ramosphere.com.br)
 
+
+## Print
+![image](https://github.com/ramonfcf/mern-reactApp/assets/96249528/3c07e07f-bc19-488b-9dbf-02b7ebf7e409)
+
+
 ## Dependencies
 
 - [React](https://reactjs.org/)
