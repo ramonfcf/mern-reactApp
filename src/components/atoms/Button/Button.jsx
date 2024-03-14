@@ -46,7 +46,7 @@ export default Button;
 
 Button.propTypes = {
   onClick: PropTypes.func.isRequired,
-  text: PropTypes.string.isRequired,
+  text: PropTypes.string,
   size: PropTypes.string,
   color: PropTypes.string,
   type: PropTypes.string,

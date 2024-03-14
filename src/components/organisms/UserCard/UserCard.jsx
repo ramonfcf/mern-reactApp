@@ -33,21 +33,21 @@ const UserCard = ({ user }) => {
 
   return (
     <div className="card my-3">
-      <div class="card-header">
+      <div className="card-header">
         <strong>{user.name}</strong>
       </div>
-      <div class="card-body">
-        <p class="card-title">
+      <div className="card-body">
+        <div className="card-title">
           <span className="font-weight-bold">
             <strong>Email: </strong>
           </span>
           {user.email}
-        </p>
-        <p class="card-text font-weight-bold">
+        </div>
+        <div className="card-text font-weight-bold">
           <strong>Birthdate: </strong>
           {formatBirthdate(user.birthdate)}
-        </p>
-        <p class="card-text">
+        </div>
+        <div className="card-text">
           <Button
             text="Delete"
             color="danger"
@@ -57,7 +57,7 @@ const UserCard = ({ user }) => {
           <span>
             <EditUserModal user={user} />
           </span>
-        </p>
+        </div>
       </div>
     </div>
   );
